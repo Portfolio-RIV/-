@@ -1,0 +1,46 @@
+﻿<Application x:Class="Экзаменационная.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:Экзаменационная"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <Style x:Key="txbMyStyle" TargetType="TextBox">
+            <Setter Property="Height" Value="50"/>
+            <Setter Property="Padding" Value="0 10 0 0"/>
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="Background" Value="Pink"/>
+            <Setter Property="BorderBrush" Value="Transparent"/>
+        </Style>
+        <Style x:Key="psbMyStyle" TargetType="PasswordBox">
+            <Setter Property="Height" Value="50"/>
+            <Setter Property="Padding" Value="0 10 0 0"/>
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="Background" Value="Pink"/>
+            <Setter Property="BorderBrush" Value="Transparent"/>
+        </Style>
+        <Style x:Key="cmbMyStyle" TargetType="ComboBox">
+            <Setter Property="Height" Value="50"/>
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="Background" Value="Pink"/>
+            <Setter Property="BorderBrush" Value="Transparent"/>
+        </Style>
+        <ControlTemplate x:Key="ButtonTemplate" TargetType="Button">
+            <Border BorderBrush="Transparent" BorderThickness="2" CornerRadius="5" Name="border"
+                    TextBlock.Foreground="White">
+                <Border.Background>
+                    <SolidColorBrush  Color="BlueViolet"/>
+                </Border.Background>
+                <ContentPresenter RecognizesAccessKey="True" Margin="{TemplateBinding Padding}"></ContentPresenter>
+            </Border>
+            <ControlTemplate.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter TargetName="border" Property="Background" Value="Red"></Setter>
+                    
+                </Trigger>
+                <Trigger Property="IsPressed" Value="True">
+                    <Setter TargetName="border" Property="BorderBrush" Value="BlueViolet"></Setter>
+                </Trigger>
+            </ControlTemplate.Triggers>
+        </ControlTemplate>
+    </Application.Resources>
+</Application>
